@@ -1,4 +1,16 @@
 #!/bin/python3
+'''
+File: CrawlerConfig.py
+Project: TBotLeecher2
+File Created: Sunday, 27th October 2019 7:54:56 pm
+Author: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Last Modified: Monday, 28th October 2019 2:06:38 am
+Modified By: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Licensed under GPLv3,  2019 Erik Regla
+'''
+
 import yaml
 
 class CrawlerConfig(object):

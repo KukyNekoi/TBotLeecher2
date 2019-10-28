@@ -1,4 +1,16 @@
 #!/bin/python3
+'''
+File: Crawler.py
+Project: TBotLeecher2
+File Created: Sunday, 27th October 2019 10:37:02 pm
+Author: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Last Modified: Monday, 28th October 2019 2:06:31 am
+Modified By: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Licensed under GPLv3,  2019 Erik Regla
+'''
+
 from QueryConfig import QueryConfig
 from CrawlerConfig import CrawlerConfig
 import tweepy

@@ -1,4 +1,16 @@
 #!/bin/python3
+'''
+File: QueryConfig.py
+Project: TBotLeecher2
+File Created: Sunday, 27th October 2019 11:50:27 pm
+Author: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Last Modified: Monday, 28th October 2019 2:07:00 am
+Modified By: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Licensed under GPLv3,  2019 Erik Regla
+'''
+
 import yaml
 import tweepy
 

@@ -1,3 +1,22 @@
 {
-    "python.pythonPath": "/home/kuky_nekoi/.anaconda3/envs/twitter-experiments/bin/python"
+    "python.pythonPath": "/home/kuky_nekoi/.anaconda3/envs/twitter-experiments/bin/python",
+    "psi-header.variables": [
+		["projectCreationYear", "2019"]
+	],
+	"psi-header.templates": [
+		{
+			"language": "*",
+			"template": [
+				"File: <<filename>>",
+				"Project: <<projectname>>",
+				"File Created: <<filecreated('dddd, Do MMMM YYYY h:mm:ss a')>>",
+				"Author: Erik Regla (kuky.nekoi@gmail.com)",
+				"-----",
+				"Last Modified: <<dateformat('dddd, Do MMMM YYYY h:mm:ss a')>>",
+				"Modified By: Erik Regla (kuky.nekoi@gmail.com)",
+				"-----",
+				"Licensed under GPLv3,  <<year>> Erik Regla"
+			]
+		}
+	]
 }

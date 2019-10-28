@@ -1,4 +1,15 @@
 #!/bin/python
+'''
+File: main.py
+Project: TBotLeecher2
+File Created: Sunday, 27th October 2019 9:37:08 pm
+Author: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Last Modified: Monday, 28th October 2019 2:06:53 am
+Modified By: Erik Regla (kuky.nekoi@gmail.com)
+-----
+Licensed under GPLv3,  2019 Erik Regla
+'''
 
 import argparse
 from CrawlerConfig import CrawlerConfig

@@ -13,7 +13,9 @@ Licensed under GPLv3,  2019 Erik Regla
 
 from DataDestination import DataDestination
 from CrawlerConfig import CrawlerConfig
+from typing import List
 import pymongo
+import tweepy
 
 class MongoDestination(DataDestination):
     "Interface for data destinations for each tweet"
@@ -31,8 +33,10 @@ class MongoDestination(DataDestination):
         
         self.collection = self.database[config.database_config_object["collection_name"]]
 
-    def save_objects(self, objects):
-        pass
+    def save_objects(self, objects: List[tweepy.Status] = []):
+        json_objects = [x._json for x in objects]
+        self.collection.insert_many(json_objects)
+
 
     def load_objects(self, id=None):
         pass

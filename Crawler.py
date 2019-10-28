@@ -33,11 +33,8 @@ class Crawler(object):
         pass
 
     def get_tweets(self):
-        tweepy_cursor = tweepy.Cursor(self.tweepy_api.search, q=self.query_config.query, count=self.query_config.page_size)
-
+        tweepy_cursor = tweepy.Cursor(self.tweepy_api.search, q=self.query_config.query, count=self.query_config.page_size, tweet_mode='extended')
         tweets = [tweet for tweet in tweepy_cursor.items(self.query_config.stride)]
-
-        print("number of tweets: ", len(tweets))
-        pprint.pprint(tweets[0]._json)
+        return tweets
 
     

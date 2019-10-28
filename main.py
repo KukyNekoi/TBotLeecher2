@@ -45,4 +45,7 @@ if __name__ == '__main__':
     print(query)
     print(destination)
 
-    crawler.get_tweets()
+    tweets = crawler.get_tweets()
+
+    destination.save_objects(objects=tweets)
+

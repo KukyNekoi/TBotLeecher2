@@ -1,0 +1,12 @@
+query:
+  hashtags: null
+  terms: null
+  hashtags: null
+
+parameters:
+  language: null
+  locale: null
+  since_id: null
+  geocode: null
+  show_user: null
+  country: null

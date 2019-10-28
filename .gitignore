@@ -1,1 +1,8 @@
 config.prod.yml
+__pycache__/Crawler.cpython-37.pyc
+__pycache__/Crawler.cpython-38.pyc
+__pycache__/CrawlerConfig.cpython-37.pyc
+__pycache__/CrawlerConfig.cpython-38.pyc
+__pycache__/QueryConfig.cpython-37.pyc
+__pycache__/QueryConfig.cpython-38.pyc
+queries/chile_geocoded.yml

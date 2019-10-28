@@ -17,8 +17,11 @@ class DataDestination(object):
     def __init__(self):
         pass
 
-    def save_object(self, object):
+    def save_objects(self, objects):
         pass
 
-    def load_object(self, id=None):
+    def load_objects(self, id=None):
         pass
+
+    def __str__(self):
+        return str(self.__class__) + ": " + str(self.__dict__)

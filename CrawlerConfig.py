@@ -26,6 +26,9 @@ class CrawlerConfig(object):
             self.access_token = config_file["credentials"]["ACCESS_TOKEN"]
             self.access_token_secret = config_file["credentials"]["ACCESS_TOKEN_SECRET"]
 
+            self.current_engine = config_file["database"]["current_engine"]
+            self.database_config_object = config_file["database"][self.current_engine]
+
         except yaml.YAMLError as exc:
             print("Error in configuration file:", exc)
 

@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/kuky_nekoi/.anaconda3/envs/twitter-experiments/bin/python",
+    "python.pythonPath": "C:\\Users\\ErikRegla\\Anaconda3\\envs\\govms-research\\python.exe",
     "psi-header.variables": [
 		["projectCreationYear", "2019"]
 	],
@@ -18,5 +18,7 @@
 				"Licensed under GPLv3,  <<year>> Erik Regla"
 			]
 		}
-	]
+	],
+	"python.linting.pylintEnabled": true,
+	"python.linting.enabled": true
 }

@@ -15,8 +15,8 @@ import argparse
 from CrawlerConfig import CrawlerConfig
 from QueryConfig import QueryConfig
 from Crawler import Crawler
+from MongoDestination import MongoDestination
 import tweepy
-
 
 parser = argparse.ArgumentParser()
 
@@ -28,17 +28,21 @@ if __name__ == '__main__':
     args = parser.parse_args()
     config = CrawlerConfig(config_file_path = args.config_file_path)
 
+    # Setup tweepy API
     tweepy_api = tweepy.API()
     auth = tweepy.OAuthHandler(config.consumer_api_key,config.consumer_api_key_secret)
     auth.set_access_token(config.access_token, config.access_token_secret)
     tweepy_api = tweepy.API(auth)
 
-
+    # Setup configurations
     query = QueryConfig(config_file_path = args.query_file_path, tweepy_api=tweepy_api)
+    crawler = Crawler(config=config, query=query, tweepy_api=tweepy_api)
+
+    # Setup destination
+    destination = MongoDestination(config=config)
 
     print(config)
     print(query)
-
-    crawler = Crawler(config=config, query=query, tweepy_api=tweepy_api)
+    print(destination)
 
     crawler.get_tweets()

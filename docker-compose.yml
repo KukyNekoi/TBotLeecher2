@@ -1,0 +1,15 @@
+version: "3"
+services:
+  database:
+    image: 'mongo'
+    container_name: 'database_backend'
+    environment:
+      - MONGODB_INIT_DATABASE=tbotleecher
+    volumes: 
+      #- ${VOLUME_PATH}:/data/db
+      - db-data:/data/db
+    ports:
+      - '27017-27018:27017-27018'
+
+volumes:
+  db-data:

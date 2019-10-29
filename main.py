@@ -22,7 +22,7 @@ parser = argparse.ArgumentParser()
 
 #parser.add_argument('name')
 parser.add_argument('--config-file-path', default='./config.prod.yml')
-parser.add_argument('--query-file-path', default='./queries/chile_geocoded.yml')
+parser.add_argument('--query-file-path', default='./queries/chile_geocoded_streaming.yml')
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -36,16 +36,16 @@ if __name__ == '__main__':
 
     # Setup configurations
     query = QueryConfig(config_file_path = args.query_file_path, tweepy_api=tweepy_api)
-    crawler = Crawler(config=config, query=query, tweepy_api=tweepy_api)
+    destination = MongoDestination(config=config, query=query)
+    crawler = Crawler(config=config, query=query, tweepy_api=tweepy_api, destination=destination)
 
     # Setup destination
-    destination = MongoDestination(config=config)
 
     print(config)
     print(query)
     print(destination)
 
-    tweets = crawler.get_tweets()
-
-    destination.save_objects(objects=tweets)
+    #tweets = crawler.get_tweets()
+    crawler.run()
+    #destination.save_objects(objects=tweets)
 

@@ -6,8 +6,8 @@ services:
     environment:
       - MONGODB_INIT_DATABASE=tbotleecher
     volumes: 
-      #- ${VOLUME_PATH}:/data/db
-      - db-data:/data/db
+      - ${BASE_PATH}/db:/data/db
+      #- db-data:/data/db
     ports:
       - '27017-27018:27017-27018'
 

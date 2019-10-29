@@ -31,27 +31,35 @@ class QueryConfig(object):
             query_file_stream = open(config_file_path, 'r')
             query_file = yaml.load(query_file_stream, Loader=yaml.FullLoader)
 
-            query_terms = query_file["query"]
+            self.tweepy_api = tweepy_api
             parameters = query_file["parameters"]
 
-            self.tweepy_api = tweepy_api
+            self.download_media = parameters["download_media"]
+            self.query_type = query_file["type"]
 
-            # build parameters    
-            self.language = parameters["language"]
-            self.locale = parameters["locale"]
-            self.since_id = parameters["since_id"]
-            self.geocode = parameters["geocode"]
-            self.show_user = parameters["show_user"]
-            self.parameter_operator = parameters["parameter_operator"]
-            self.query_operator = parameters["query_operator"]
-            self.page_size = parameters["page_size"]
-            self.stride = parameters["stride"]
+            if self.query_type == "streaming":
+                self.track = parameters["track"]
+                self.locations = parameters["locations"]
+            
+            if self.query_type == "query":
+                query_terms = query_file["query"]
+                self.track = config_file["database"]
+                # build parameters    
+                self.language = parameters["language"]
+                self.locale = parameters["locale"]
+                self.since_id = parameters["since_id"]
+                self.geocode = parameters["geocode"]
+                self.show_user = parameters["show_user"]
+                self.parameter_operator = parameters["parameter_operator"]
+                self.query_operator = parameters["query_operator"]
+                self.page_size = parameters["page_size"]
+                self.stride = parameters["stride"]
 
-            self.hashtags_query = self.build_query_string(query_terms["hashtags"], self.query_operator)
-            self.terms_query = self.build_query_string(query_terms["terms"], self.query_operator)
-            self.countries_query = self.build_country_parameters(query_terms["countries"], "place", self.query_operator)
+                self.hashtags_query = self.build_query_string(query_terms["hashtags"], self.query_operator)
+                self.terms_query = self.build_query_string(query_terms["terms"], self.query_operator)
+                self.countries_query = self.build_country_parameters(query_terms["countries"], "place", self.query_operator)
 
-            self.query = self.join_queries([self.hashtags_query, self.terms_query, self.countries_query], self.parameter_operator)
+                self.query = self.join_queries([self.hashtags_query, self.terms_query, self.countries_query], self.parameter_operator)
 
         except yaml.YAMLError as exc:
             print("Error in configuration file:", exc)

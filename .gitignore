@@ -2,3 +2,4 @@ config.prod.yml
 queries/chile_geocoded.yml
 .env
 __pycache__
+queries/chile_geocoded_streaming.yml

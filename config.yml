@@ -3,3 +3,10 @@ credentials:
   CONSUMER_API_KEY_SECRET: YOUR_CONSUMER_API_KEY_SECRET
   ACCESS_TOKEN: YOUR_ACCESS_TOKEN
   ACCESS_TOKEN_SECRET: YOUR_ACCESS_TOKEN_SECRET
+
+database:
+  current_engine: mongo
+  mongo:
+    connection_string: mongodb://localhost:27017/
+    database_name: tbotleecher
+    collection_name: tbotleecher

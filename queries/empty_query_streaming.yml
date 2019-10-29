@@ -1,0 +1,9 @@
+type: streaming
+parameters:
+  track: null
+  locations: 
+   - null
+   - null
+   - null
+   - null
+  download_media: null

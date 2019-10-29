@@ -12,6 +12,7 @@ Licensed under GPLv3,  2019 Erik Regla
 '''
 
 from DataDestination import DataDestination
+from QueryConfig import QueryConfig
 from CrawlerConfig import CrawlerConfig
 from typing import List
 import pymongo
@@ -20,7 +21,9 @@ import tweepy
 class MongoDestination(DataDestination):
     "Interface for data destinations for each tweet"
 
-    def __init__(self, config: CrawlerConfig):
+    def __init__(self, config: CrawlerConfig, query: QueryConfig):
+        super().__init__(query=query)
+
         self.client = pymongo.MongoClient(config.database_config_object["connection_string"])
         self.database = self.client[config.database_config_object["database_name"]]
         
@@ -37,6 +40,9 @@ class MongoDestination(DataDestination):
         json_objects = [x._json for x in objects]
         self.collection.insert_many(json_objects)
 
+        if super().query.download_media:
+            for x in json_objects:
+                super().save_media(x)
 
     def load_objects(self, id=None):
         pass

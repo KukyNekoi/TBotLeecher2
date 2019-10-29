@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\ErikRegla\\Anaconda3\\envs\\govms-research\\python.exe",
+    "python.pythonPath": "/home/kuky_nekoi/.anaconda3/envs/twitter-experiments/bin/python",
     "psi-header.variables": [
 		["projectCreationYear", "2019"]
 	],

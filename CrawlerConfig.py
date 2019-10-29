@@ -12,7 +12,6 @@ Licensed under GPLv3,  2019 Erik Regla
 '''
 
 import yaml
-
 class CrawlerConfig(object):
     "Configurations for tweet crawling, such as API Keys..."
 
@@ -28,6 +27,7 @@ class CrawlerConfig(object):
 
             self.current_engine = config_file["database"]["current_engine"]
             self.database_config_object = config_file["database"][self.current_engine]
+
 
         except yaml.YAMLError as exc:
             print("Error in configuration file:", exc)

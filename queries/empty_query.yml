@@ -1,3 +1,4 @@
+type: "query"
 query:
   hashtags: null
   terms: null

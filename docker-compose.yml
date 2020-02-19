@@ -10,6 +10,22 @@ services:
       #- db-data:/data/db
     ports:
       - '27017-27018:27017-27018'
+  
+  stream_crawler: 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kuky_nekoi/tbotleecher2
+    restart: always
+    depends_on: 
+      - database
+    command: --config-file-path=./config.prod.yml --query-file-path=./queries/chile_geocoded_streaming.yml
+    environment:
+      PYTHONUNBUFFERED: 1
+    volumes:
+      - .:/app
+      - ${BASE_PATH}:/storage
+  
 
 volumes:
   db-data:

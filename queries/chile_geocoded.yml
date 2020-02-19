@@ -1,0 +1,16 @@
+type: query
+query:
+  hashtags:
+  terms:
+  countries:
+    - Chile
+parameters:
+  language: null
+  locale: null
+  since_id: null
+  geocode: null
+  show_user: null
+  parameter_operator: OR
+  query_operator: AND
+  page_size: 10
+  stride: 10

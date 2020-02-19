@@ -1,0 +1,9 @@
+type: streaming
+parameters:
+  track: null
+  locations: 
+   - -70.85
+   - -33.66
+   - -70.45
+   - -33.30
+  download_media: /storage/downloads

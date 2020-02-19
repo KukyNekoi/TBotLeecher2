@@ -1,0 +1,7 @@
+pymongo
+tqdm
+wget
+twitter
+python-twitter
+tweepy
+pyyaml
